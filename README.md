@@ -1,3 +1,6 @@
+[![Known Vulnerabilities](https://snyk.io/test/github/mendixlabs/TabPageSelector/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mendixlabs/TabPageSelector?targetFile=package.json)
+[![Support](https://img.shields.io/badge/Mendix%20Support%3A-Community-green.svg)](https://docs.mendix.com/community/app-store/app-store-content-support)
+
 ## TabSelector
 [Use this widget to dynamically set the active tab pane.]
 
