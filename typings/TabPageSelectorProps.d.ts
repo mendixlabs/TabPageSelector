@@ -1,12 +1,12 @@
 /**
- * This file was generated from TabSelector.xml
+ * This file was generated from TabPageSelector.xml
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix UI Content Team
  */
 import { CSSProperties } from "react";
 import { EditableValue } from "mendix";
 
-export interface TabSelectorContainerProps {
+export interface TabPageSelectorContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
@@ -15,7 +15,7 @@ export interface TabSelectorContainerProps {
     targetTabCtrl: string;
 }
 
-export interface TabSelectorPreviewProps {
+export interface TabPageSelectorPreviewProps {
     class: string;
     style: string;
     paneIndexByAttr: string;

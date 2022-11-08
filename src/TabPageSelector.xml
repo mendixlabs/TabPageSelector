@@ -3,7 +3,7 @@
         supportedPlatform="Web"
         xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
-    <name>Tab Selector</name>
+    <name>Tab Page Selector</name>
     <description>Use this widget to dynamically set the active tab page.</description>
     <icon/>
     <properties>

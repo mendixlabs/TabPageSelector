@@ -1,10 +1,8 @@
 import { Component, ReactNode } from "react";
 import { Big } from "big.js";
-import { TabSelectorContainerProps } from "../typings/TabSelectorProps";
+import { TabPageSelectorContainerProps } from "../typings/TabPageSelectorProps";
 
-import "./ui/TabSelector.css";
-
-export default class TabSelector extends Component<TabSelectorContainerProps> {
+export default class TabPageSelector extends Component<TabPageSelectorContainerProps> {
     render(): ReactNode {        
         if(this.props.paneIndexByAttr === undefined)
         {
@@ -43,7 +41,7 @@ export default class TabSelector extends Component<TabSelectorContainerProps> {
             return;
         }
     }
-    componentDidUpdate(_prevProps: Readonly<TabSelectorContainerProps>, _prevState: Readonly<{}>, _snapshot?: any): void {
+    componentDidUpdate(_prevProps: Readonly<TabPageSelectorContainerProps>, _prevState: Readonly<{}>, _snapshot?: any): void {
         if(this.props.paneIndexByAttr!.value === undefined)
         {
             console.error("Tab page selector not specified. Please specify the attribute to determine tab pane index.");
