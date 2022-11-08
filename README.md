@@ -1,27 +1,21 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/mendixlabs/TabPageSelector/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mendixlabs/TabPageSelector?targetFile=package.json)
 [![Support](https://img.shields.io/badge/Mendix%20Support%3A-Community-green.svg)](https://docs.mendix.com/community/app-store/app-store-content-support)
 
-## TabSelector
-[Use this widget to dynamically set the active tab pane.]
+## TabPageSelector
+Use this pluggable widget widget to dynamically set the active tab page. The default Tab Container in mendix apps does not have facility to select and open tab page dynamically, by using this widget you can dynamically open tab page.
 
 ## Features
-[feature highlights]
+- Dynamically open tab page
+- Get tab page number on which user has clicked
 
 ## Usage
-[step by step instructions]
-
-## Demo project
-[link to sandbox]
+- Add a Data View
+- Add a Tab Container inside the Data View
+- Add the this widget inside the Data View
+- Configure the widget by docuble clicking on it:
+    - Enter the name of the target Tab Container
+    - Select the attribute to determine tab page number. The first tab page number is always 1.
+- Run the app, now based on attribute the tab page will be selected by default.
 
 ## Issues, suggestions and feature requests
-[link to GitHub issues]
-
-## Development and contribution
-
-1. Install NPM package dependencies by using: `npm install`. If you use NPM v7.x.x, which can be checked by executing `npm -v`, execute: `npm install --legacy-peer-deps`.
-1. Run `npm start` to watch for code changes. On every change:
-    - the widget will be bundled;
-    - the bundle will be included in a `dist` folder in the root directory of the project;
-    - the bundle will be included in the `deployment` and `widgets` folder of the Mendix test project.
-
-[specify contribution]
+[link to GitHub issues](https://github.com/mendixlabs/TabPageSelector/issues)
