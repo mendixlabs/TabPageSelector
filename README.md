@@ -7,6 +7,7 @@ Use this pluggable widget widget to dynamically set the active tab page. The def
 ## Features
 - Dynamically open tab page
 - Get tab page number on which user has clicked
+- Tested on Mendix 8.18.19, 9.1.1, 9.6.0, 9.7.0 and 9.15.1
 
 ## Usage
 - Add a Data View
