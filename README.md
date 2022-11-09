@@ -20,4 +20,4 @@ Use this pluggable widget widget to dynamically set the active tab page. The def
 - Run the app, now based on attribute the tab page will be selected by default.
 
 ## Issues, suggestions and feature requests
-[link to GitHub issues](https://github.com/mendixlabs/TabPageSelector/issues)
+Suggestions, feedbacks and issues are always welcome :) [here](https://github.com/mendixlabs/TabPageSelector/issues)
