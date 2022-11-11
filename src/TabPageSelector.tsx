@@ -60,10 +60,10 @@ export default class TabPageSelector extends Component<TabPageSelectorContainerP
             if(li == null)
             {
                 console.debug("Determined tab page index is: " + this.props.paneIndexByAttr!.value);
-                console.error("Unable find tab page index by specified index.")
+                console.error("Unable find tab page index by specified index.");
             }          
-            
-            li.click()
+            if(li!=null)
+                li.click()
         }        
     }
 }

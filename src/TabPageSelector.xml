@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="mendix.tabselector.TabSelector" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+<widget id="mendix.tabpageselector.TabPageSelector" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
         supportedPlatform="Web"
         xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
@@ -8,18 +8,17 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="paneIndexByAttr" type="attribute" required="false">
+            <property key="targetTabCtrl" type="string" required="true">
+                <caption>Tab container name</caption>
+                <description>Enter target tab container name.</description>
+            </property>
+            <property key="paneIndexByAttr" type="attribute" required="true">
                 <caption>Select Attribute</caption>
                 <description>Select the attribute which indicates the tab page number. First tab page is always 1.</description>
                 <attributeTypes>
                     <attributeType name="Integer"/>
                 </attributeTypes>
-            </property> 
-            
-            <property key="targetTabCtrl" type="string">
-                <caption>Tab container name</caption>
-                <description>Enter target tab container name.</description>
-            </property>           
+            </property>
         </propertyGroup>
     </properties>
 </widget>

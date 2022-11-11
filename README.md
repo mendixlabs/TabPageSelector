@@ -7,11 +7,13 @@ Use this pluggable widget widget to dynamically set the active tab page. The def
 ## Features
 - Dynamically open tab page
 - Get tab page number on which user has clicked
-- Tested on Mendix 8.18.19, 9.1.1, 9.6.0, 9.7.0 and 9.15.1
+- Tested on Mendix 8.18.19, 9.1.1, 9.6.0, 9.7.0, 9.11.0 and 9.15.1
+
+## Demo and Playground
+Try-out this widget by visiting https://tabselectorwidgetapp-sandbox.mxapps.io/
 
 ## Usage
-- Create a Mendix app
-- Add a Data View
+- Add a Data View and set the data source (this data source should have a attribute which will determine the number of active tab page)
 - Add a Tab Container inside the Data View
 - Add the this widget inside the Data View
 - Configure the widget by docuble clicking on it:
@@ -19,5 +21,8 @@ Use this pluggable widget widget to dynamically set the active tab page. The def
     - Select the attribute to determine tab page number. The first tab page number is always 1.
 - Run the app, now based on attribute the tab page will be selected by default.
 
+## Limitations
+This widget should be used inside a data container, we cannot use Microflow as data source to determine active page number this is due to limitation from Mendix pluggable widgets. As of now there is no direct way to get return value form Microflow in pluggable widgets. See https://forum.mendix.com/link/questions/95035
+
 ## Issues, suggestions and feature requests
-Suggestions, feedbacks and issues are always welcome :) [here](https://github.com/mendixlabs/TabPageSelector/issues)
+Suggestions, feedbacks, contributions and issues are always welcome :) [here](https://github.com/mendixlabs/TabPageSelector/issues)

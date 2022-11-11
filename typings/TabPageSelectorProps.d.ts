@@ -11,13 +11,13 @@ export interface TabPageSelectorContainerProps {
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    paneIndexByAttr?: EditableValue<BigJs.Big>;
     targetTabCtrl: string;
+    paneIndexByAttr: EditableValue<BigJs.Big>;
 }
 
 export interface TabPageSelectorPreviewProps {
     class: string;
     style: string;
-    paneIndexByAttr: string;
     targetTabCtrl: string;
+    paneIndexByAttr: string;
 }
