@@ -2,7 +2,7 @@
 [![Support](https://img.shields.io/badge/Mendix%20Support%3A-Community-green.svg)](https://docs.mendix.com/community/app-store/app-store-content-support)
 
 ## TabPageSelector
-Use this pluggable widget widget to dynamically set the active tab page. The default Tab Container in mendix apps does not have facility to select and open tab page dynamically, by using this widget you can dynamically open tab page.
+Use this pluggable widget to dynamically set the active tab page. The default Tab Container in mendix apps does not have facility to select and open tab page dynamically, by using this widget you can dynamically open tab page.
 
 ## Features
 - Dynamically open tab page
