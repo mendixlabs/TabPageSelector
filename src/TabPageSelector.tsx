@@ -15,25 +15,25 @@ export default class TabPageSelector extends Component<TabPageSelectorContainerP
         return "";
     }
     componentDidMount(): void {
-        const div = this.getTargetDiv(this.props.targetTabCtrl);
-        if (div != null) {
-            const li = div.querySelectorAll("ul > li");
-            if (li == null) {
-                console.error("Unable find tab pages");
-                return;
-            }
-            li.forEach((currentValue, _currentIndex, _listObj) => {
-                currentValue.addEventListener(
-                    "click",
-                    () => {
-                        this.props.paneIndexByAttr?.setValue(Big(_currentIndex + 1));
-                    },
-                    false
-                );
-            }, this);
-        } else {
-            throw new Error("Unable to find target Tab Container. Check above error logs for more info.");
+        this.checkTargetDivPresent(this.props.targetTabCtrl);
+        if (document.querySelectorAll(".mx-name-" + this.props.targetTabCtrl + " > ul > li").length == 0) {
+            console.error("Unable find tab pages");
+            return;
         }
+        document
+            .querySelectorAll(".mx-name-" + this.props.targetTabCtrl + " > ul")
+            .forEach((ultValue, _ulIndex, _listObj) => {
+                ultValue.querySelectorAll("li").forEach((currentValue, _currentIndex, _listObj) => {
+                    console.log(currentValue);
+                    currentValue.addEventListener(
+                        "click",
+                        () => {
+                            this.props.paneIndexByAttr?.setValue(Big(_currentIndex + 1));
+                        },
+                        false
+                    );
+                }, this);
+            }, this);
     }
     componentDidUpdate(
         _prevProps: Readonly<TabPageSelectorContainerProps>,
@@ -49,35 +49,30 @@ export default class TabPageSelector extends Component<TabPageSelectorContainerP
             console.error("Tab page selector number cannot be less than or equal to zero.");
             return;
         }
-        const div = this.getTargetDiv(this.props.targetTabCtrl);
-        if (div != null) {
-            const liList = div.querySelectorAll("ul > li");
-            const li: HTMLElement = liList.item(
-                parseInt(this.props.paneIndexByAttr.value.toString(), 10) - 1
-            ) as HTMLElement;
-            if (li == null) {
-                console.debug("Determined tab page number is: " + this.props.paneIndexByAttr.value);
-                console.error("Unable find tab page by specified number.");
-            }
-            if (li != null) {
-                li.click();
-            }
-        } else {
-            throw new Error("Unable to find target Tab Container. Check above error logs for more info.");
+        this.checkTargetDivPresent(this.props.targetTabCtrl);
+        if (document.querySelectorAll(".mx-name-" + this.props.targetTabCtrl + " > ul > li").length == 0) {
+            console.error("Unable find tab pages");
+            return;
         }
+        const liIndix: number = parseInt(this.props.paneIndexByAttr.value.toString(), 10) - 1;
+        document
+            .querySelectorAll(".mx-name-" + this.props.targetTabCtrl + " > ul")
+            .forEach((ultValue, _ulIndex, _listObj) => {
+                const liList = ultValue.querySelectorAll("li");
+                const li: HTMLElement = liList.item(liIndix) as HTMLElement;
+                if (li == null) {
+                    console.debug("Determined tab page number is: " + this.props.paneIndexByAttr.value);
+                    console.error("Unable find tab page by specified number.");
+                }
+                if (li != null) {
+                    li.click();
+                }
+            }, this);
     }
-    getTargetDiv(targetTabCtrl: string): Element | null {
+    checkTargetDivPresent(targetTabCtrl: string): void {
         const divList = document.getElementsByClassName("mx-name-" + targetTabCtrl);
-        if (divList.length > 0) {
-            const div = divList.item(0);
-            if (div != null) {
-                return div;
-            } else {
-                console.error("Tab container DOM element found, but unable to get it's referance.");
-            }
-        } else {
-            console.error("Tab container DOM element not found. Please check provided taget tab container name.");
+        if (divList.length == 0) {
+            throw new Error("Tab container DOM element not found. Please check provided target tab container name.");
         }
-        return null;
     }
 }
