@@ -2,7 +2,16 @@ import { Component, ReactNode } from "react";
 import { Big } from "big.js";
 import { TabPageSelectorContainerProps } from "../typings/TabPageSelectorProps";
 
-export default class TabPageSelector extends Component<TabPageSelectorContainerProps> {
+type TabPageSelectorState = { currentTabIndex: number };
+
+export default class TabPageSelector extends Component<TabPageSelectorContainerProps, TabPageSelectorState> {
+    constructor(props: TabPageSelectorContainerProps | Readonly<TabPageSelectorContainerProps>) {
+        super(props);
+        this.state = {
+            currentTabIndex: 0
+        };
+    }
+
     render(): ReactNode {
         if (this.props.paneIndexByAttr === undefined) {
             console.error("Tab page selector not specified. Please specify the attribute to determine tab pane index.");
@@ -24,11 +33,21 @@ export default class TabPageSelector extends Component<TabPageSelectorContainerP
             .querySelectorAll(".mx-name-" + this.props.targetTabCtrl + " > ul")
             .forEach((ultValue, _ulIndex, _listObj) => {
                 ultValue.querySelectorAll("li").forEach((currentValue, _currentIndex, _listObj) => {
-                    console.log(currentValue);
                     currentValue.addEventListener(
                         "click",
                         () => {
-                            this.props.paneIndexByAttr?.setValue(Big(_currentIndex + 1));
+                            if (_currentIndex !== this.state.currentTabIndex) {
+                                this.setState({ currentTabIndex: _currentIndex });
+                                this.props.paneIndexByAttr?.setValue(Big(_currentIndex + 1));
+                                if (
+                                    this.props.onChangeAction != undefined &&
+                                    this.props.onChangeAction.canExecute &&
+                                    !this.props.onChangeAction.isExecuting
+                                ) {
+                                    console.debug("Executing action for TabPageSelector ", this.props.name);
+                                    this.props.onChangeAction.execute();
+                                }
+                            }
                         },
                         false
                     );
@@ -37,7 +56,7 @@ export default class TabPageSelector extends Component<TabPageSelectorContainerP
     }
     componentDidUpdate(
         _prevProps: Readonly<TabPageSelectorContainerProps>,
-        _prevState: Readonly<{}>,
+        _prevState: Readonly<TabPageSelectorState>,
         // eslint-disable-next-line  @typescript-eslint/no-explicit-any
         _snapshot?: any
     ): void {
@@ -64,7 +83,7 @@ export default class TabPageSelector extends Component<TabPageSelectorContainerP
                     console.debug("Determined tab page number is: " + this.props.paneIndexByAttr.value);
                     console.error("Unable find tab page by specified number.");
                 }
-                if (li != null) {
+                if (li != null && !li.classList.contains("active")) {
                     li.click();
                 }
             }, this);

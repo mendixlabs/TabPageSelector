@@ -4,7 +4,7 @@
  * @author Mendix UI Content Team
  */
 import { CSSProperties } from "react";
-import { EditableValue } from "mendix";
+import { ActionValue, EditableValue } from "mendix";
 
 export interface TabPageSelectorContainerProps {
     name: string;
@@ -13,6 +13,7 @@ export interface TabPageSelectorContainerProps {
     tabIndex?: number;
     targetTabCtrl: string;
     paneIndexByAttr: EditableValue<BigJs.Big>;
+    onChangeAction?: ActionValue;
 }
 
 export interface TabPageSelectorPreviewProps {
@@ -20,4 +21,5 @@ export interface TabPageSelectorPreviewProps {
     style: string;
     targetTabCtrl: string;
     paneIndexByAttr: string;
+    onChangeAction: {} | null;
 }
