@@ -7,7 +7,8 @@ Use this pluggable widget to dynamically set the active tab page. The default Ta
 ## Features
 - Dynamically open tab page
 - Get tab page number on which user has clicked
-- Tested on Mendix 8.18.19, 9.1.1, 9.6.0, 9.7.0, 9.11.0 and 9.15.1
+- Call a Microflow on change of active tab
+- Tested on Mendix 8.18.19, 9.1.1, 9.6.0, 9.7.0, 9.11.0, 9.15.1, 9.24.9 and 10.3.1
 
 ## Demo and Playground
 Try-out this widget by visiting https://tabselectorwidgetapp-sandbox.mxapps.io/

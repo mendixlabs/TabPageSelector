@@ -18,6 +18,12 @@
                 <attributeTypes>
                     <attributeType name="Integer"/>
                 </attributeTypes>
+            </property>            
+        </propertyGroup>
+        <propertyGroup caption="Events">
+            <property key="onChangeAction" type="action" required="false">
+                <caption>On tab change</caption>
+                <description>Select an action to be performed when the active tab is changed</description>
             </property>
         </propertyGroup>
     </properties>

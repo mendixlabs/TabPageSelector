@@ -1,7 +1,7 @@
 {
   "name": "tabpageselector",
   "widgetName": "TabPageSelector",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Use this widget to dynamically set the active tab page.",
   "copyright": "2020 Mendix Technology BV",
   "author": "Amogh Shah",
